@@ -49,7 +49,7 @@ namespace SensorServer
                         dataread = readBuffer.Length;
                     }
                 }
-                //client have connected if the have querry respond to the querry and return to client
+                
                 string query = echoQuery(request);
                 //
                 using (var output = args.Socket.OutputStream)
@@ -109,23 +109,4 @@ namespace SensorServer
         }
     }
 }
-    /*
-    public sealed class StartupTask : IBackgroundTask
-    {
-        private static SensorServerInterface ssihandle;
-        public StartupTask(SensorServerInterface ssiHandle) {
-            ssihandle = ssiHandle;
-        }
-        private static BackgroundTaskDeferral _Deferral = null;
-        public async void Run(IBackgroundTaskInstance taskInstance)
-        {
-            _Deferral = taskInstance.GetDeferral();
-            var easyServ = new EasyServer();
-            await ThreadPool.RunAsync(workItem =>
-           {
-               easyServ.start();
-           });
-        }
-    }
-    
-}*/
+ 
