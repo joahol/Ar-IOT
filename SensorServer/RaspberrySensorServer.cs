@@ -40,17 +40,9 @@ namespace SensorServer
         {
 
             readCancelToken = new CancellationTokenSource();
-  //           while (true)
- //            {
-      //           if(readCancelToken.Token.IsCancellationRequested || arduino == null)
-             //    {
-    //                 break;
-      //           }
                  Task SensorListeningTask = sensorListener();
 
                  await sensorListener();
-            
-             //}
         }
 
         private async Task sensorListener()
